@@ -68,8 +68,8 @@
 
                     <li class="dropdown"><a href="#"><span>Conta</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Entrar</a></li>
-                            <li><a href="#">Registar</a></li>
+                            <li><a href="{{('login')}}">Entrar</a></li>
+                            <li><a href="{{('register')}}">Registar</a></li>
                         </ul>
                     </li>
                 </ul>
