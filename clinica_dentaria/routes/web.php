@@ -42,6 +42,8 @@ Route::get('/contacto', function () {
 Route::get('/home', [HomeController::class, 'redirect']);
 //rota que redireciona a pagina de medicos
 Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+//upload dados dos medicos
+Route::post('/upload_doctor', [AdminController::class, 'upload']);
 
 
 Route::middleware([
