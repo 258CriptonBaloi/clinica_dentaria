@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,8 @@ Route::get('/contacto', function () {
 });
 //rota que redireciona a pagina de administracao depois de login
 Route::get('/home', [HomeController::class, 'redirect']);
+//rota que redireciona a pagina de medicos
+Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 
 
 Route::middleware([
