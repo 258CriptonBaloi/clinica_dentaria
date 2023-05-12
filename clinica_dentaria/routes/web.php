@@ -19,9 +19,7 @@ Route::get('/', function () {
     return view('index');
 });
 //rota para a pagina de doutores
-Route::get('/doutores', function () {
-    return view('doutores');
-});
+Route::get('/doutores', [HomeController::class, 'doct']);
 //rota para a pagina galeria
 Route::get('/galeria', function () {
     return view('galeria');

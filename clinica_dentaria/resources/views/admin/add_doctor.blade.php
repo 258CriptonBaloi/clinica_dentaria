@@ -22,6 +22,15 @@
         @include('admin.navbar');
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
+        @if(session()->has('message'))
+
+            <button type></button>
+            <div class="alert alert-sucess">
+              {{session()->get('message')}}
+            <div/>
+
+        @endif
+
             <div class="container" align="center" style="padding-top:100px">
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                   @csrf
