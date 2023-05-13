@@ -54,6 +54,10 @@ Route::get('/showappointment', [AdminController::class, 'showappointment']);
 Route::get('/approved/{id}', [AdminController::class, 'approved']);
 //rota para marcacoes canceladas
 Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
+//rota para listar medicos
+Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
+//rota para remover dados dos medicos
+Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
 
 
 
