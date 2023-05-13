@@ -22,25 +22,29 @@
         @include('admin.navbar');
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-        @if(session()->has('message'))
-
-            <button type></button>
-            <div class="alert alert-sucess">
-              {{session()->get('message')}}
-            <div/>
-
-        @endif
-
             <div class="container" align="center" style="padding-top:100px">
+
+            @if(session()->has('message'))
+
+            <div class="alert alert-success">
+              <button type="button" class="close" data-dismiss="alert">
+                x
+              </button>
+
+              {{session()->get('message')}}
+            </div>
+
+            @endif
+
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data">
                   @csrf
                     <div style="padding:15px">
                         <label>Nome:</label>
-                        <input type="text" style="color:black;" name="name" placeholder="Nome do medico">
+                        <input type="text" style="color:black;" name="name" placeholder="Nome do medico" required="">
                     </div>
                     <div style="padding:15px">
                         <label>Sexo:</label>
-                        <select name="gender" style="color:black; width:200px;">
+                        <select name="gender" style="color:black; width:200px;" required="">
                             <option>--Select--</option>
                             <option value="M">Masculino</option>
                             <option value="F">Feminino</option>
@@ -48,7 +52,7 @@
                     </div>
                     <div style="padding:15px">
                         <label>Especialidade:</label>
-                        <select name="speciality" style="color:black; width:200px;">
+                        <select name="speciality" style="color:black; width:200px;" required="">
                             <option>--Select--</option>
                             <option value="1">1</option>
                             <option value="1">2</option>
@@ -59,15 +63,15 @@
                     </div>
                     <div style="padding:15px">
                         <label>Telefone:</label>
-                        <input type="number" style="color:black;" name="phone" placeholder="Numero de telefone">
+                        <input type="number" style="color:black;" name="phone" placeholder="Numero de telefone" required="">
                     </div>
                     <div style="padding:15px">
                         <label>Email:</label>
-                        <input type="text" style="color:black;" name="email" placeholder="Email do medico">
+                        <input type="text" style="color:black;" name="email" placeholder="Email do medico" required="">
                     </div>
                     <div style="padding:15px">
                         <label>Foto:</label>
-                        <input type="file" name="file">
+                        <input type="file" name="file" required="">
                     </div>
                     <div style="padding:15px">
                         <input type="submit" class="btn btn-success">
