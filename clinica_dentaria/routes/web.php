@@ -44,6 +44,8 @@ Route::get('/add_doctor_view', [AdminController::class, 'addview']);
 Route::post('/upload_doctor', [AdminController::class, 'upload']);
 //rota para marcacao de consultas
 Route::post('/appointment', [HomeController::class, 'appointment']);
+//rota para visualizar consultas marcadas
+Route::get('/myappointment', [HomeController::class, 'myappointment']);
 
 
 Route::middleware([

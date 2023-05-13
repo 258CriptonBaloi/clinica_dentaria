@@ -67,5 +67,10 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'MARCACAO FEITA COM SUCESSO. IREMOS CONTACTA-LO BREVEMENTE');
 
     }
+    //funcao que retorna a view de consultas feitas pelo usuario
+    public function myappointment(){
+      return view('user.my_appointment');  
+    }
+
 
 }
