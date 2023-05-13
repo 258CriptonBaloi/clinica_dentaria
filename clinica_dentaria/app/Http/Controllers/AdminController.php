@@ -37,5 +37,26 @@ class AdminController extends Controller
         $data=appointment::all();
         return view('admin.showappointment', compact('data'));
     }
+    //funcao para aprovar marcacoes
+    public function approved($id){
+        $data=appointment::find($id);
+        
+        $data->status='Aprovado';
+
+        $data->save();
+
+        return redirect()->back();
+    }
+    //funcao para cancelar marcacoes
+    public function canceled($id){
+        $data=appointment::find($id);
+        
+        $data->status='Cancelado';
+
+        $data->save();
+
+        return redirect()->back();
+    }
+
 
 }

@@ -40,8 +40,8 @@
                     <td>{{$appoint->message}}</td>
                     <td>{{$appoint->doctor}}</td>
                     <td>{{$appoint->status}}</td>
-                    <td><a class="bt btn-success" onclick="return confirm('Tem a certeza que deseja Aprovar?') " href="">Aprovar</a></td>
-                    <td><a class="bt btn-danger" onclick="return confirm('Tem a certeza que deseja Cancelar?') " href="">Cancelar</a></td>
+                    <td><a class="bt btn-success" onclick="return confirm('Tem a certeza que deseja Aprovar?') " href="{{url('approved', $appoint->id)}}">Aprovar</a></td>
+                    <td><a class="bt btn-danger" onclick="return confirm('Tem a certeza que deseja Cancelar?') " href="{{url('canceled', $appoint->id)}}">Cancelar</a></td>
                     </tr>
                     @endforeach
                 </tbody>

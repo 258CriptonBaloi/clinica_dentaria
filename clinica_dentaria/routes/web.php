@@ -50,6 +50,10 @@ Route::get('/myappointment', [HomeController::class, 'myappointment']);
 Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 //rota para o admin visualizar sessoes marcadas
 Route::get('/showappointment', [AdminController::class, 'showappointment']);
+//rota para marcacoes aprovadas
+Route::get('/approved/{id}', [AdminController::class, 'approved']);
+//rota para marcacoes canceladas
+Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
 
 
 
