@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Doctor;
+
+use App\Models\Appointment;
 
 class AdminController extends Controller
 {
@@ -29,4 +32,10 @@ class AdminController extends Controller
 
         return redirect()->back()->with('message', 'Medico adicionado com sucesso');
     }
+    //funcao para listar as marcacoes dos usuarios
+    public function showappointment(){
+        $data=appointment::all();
+        return view('admin.showappointment', compact('data'));
+    }
+
 }
