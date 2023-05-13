@@ -46,6 +46,8 @@ Route::post('/upload_doctor', [AdminController::class, 'upload']);
 Route::post('/appointment', [HomeController::class, 'appointment']);
 //rota para visualizar consultas marcadas
 Route::get('/myappointment', [HomeController::class, 'myappointment']);
+//butao para cancelar sessoes marcadas
+Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 
 Route::middleware([

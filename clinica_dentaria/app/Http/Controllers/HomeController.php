@@ -69,8 +69,21 @@ class HomeController extends Controller
     }
     //funcao que retorna a view de consultas feitas pelo usuario
     public function myappointment(){
-      return view('user.my_appointment');  
+        if(Auth::id()){
+            $userid=Auth::user()->id;
+            $appoint=appointment::where('user_id', $userid)->get();
+            return view('user.my_appointment', compact('appoint'));
+        }else{
+            return redirect()->back();
+        }  
     }
+    //funcao para remover uma cconsulta feita pelo usuario
+    public function cancel_appoint($id){
+        $data=appointment::find($id);
 
+        $data->delete();
+
+        return redirect()->back();
+    }
 
 }

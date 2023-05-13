@@ -58,33 +58,26 @@
 </nav>
 
 <!--tabela-->
-<table class="table">
+<table class="table" align="center">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Nome do Medico</th>
+      <th scope="col">Data</th>
+      <th scope="col">Mensagem</th>
+      <th scope="col">Status</th>
+      <th scope="col">Cancelar Marcacao</th>
     </tr>
   </thead>
   <tbody>
+    @foreach($appoint as $appoints)
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td scope="row">{{$appoints->doctor}}</td>
+      <td>{{$appoints->date}}</td>
+      <td>{{$appoints->message}}</td>
+      <td>{{$appoints->status}}</td>
+      <td><a class="bt btn-danger" onclick="return confirm('Tem a certeza que deseja cancelar?') " href="{{url('cancel_appoint', $appoints->id)}}">Cancelar</a></td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
 
