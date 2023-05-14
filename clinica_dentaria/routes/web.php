@@ -58,6 +58,10 @@ Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
 Route::get('/showdoctor', [AdminController::class, 'showdoctor']);
 //rota para remover dados dos medicos
 Route::get('/deletedoctor/{id}', [AdminController::class, 'deletedoctor']);
+//rota para a pagina de atualizar os dados do medico
+Route::get('/updatedoctor/{id}', [AdminController::class, 'updatedoctor']);
+//rota para editar os dados do medico
+Route::post('/editdoctor/{id}', [AdminController::class, 'editdoctor']);
 
 
 

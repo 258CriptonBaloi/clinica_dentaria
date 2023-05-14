@@ -41,7 +41,7 @@
                     <td>{{$doctor->speciality}}</td>
                     <td><img height="100" width="100" src="doctorimage/{{$doctor->image}}"></td>
                     <td><a class="bt btn-danger" onclick="return confirm('Tem a certeza que deseja Remover?') " href="{{url('deletedoctor', $doctor->id)}}">Remover</a></td>
-                    <td><a class="bt btn-primary" onclick="return confirm('Tem a certeza que deseja Atualizar?') " href="">Atualizar</a></td>
+                    <td><a class="bt btn-primary" onclick="return confirm('Tem a certeza que deseja Atualizar?') " href="{{url('updatedoctor', $doctor->id)}}">Atualizar</a></td>
                     </tr>
                     </tr>
                     @endforeach
